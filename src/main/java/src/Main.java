@@ -8,4 +8,8 @@ public class Main {
     public static String hello(){
         return "Hello world";
     }
+
+    public static String hello2(){
+        return "Hello";
+    }
 }
