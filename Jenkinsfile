@@ -3,10 +3,11 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                echo 'Building5..'
-            }
-        }
+                    steps {
+                        sh 'make'
+                        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                    }
+                }
         stage('Test') {
             steps {
                 echo 'Testing5..'
@@ -15,6 +16,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying5....'
+            }
+        stage('Docker-Compose Up') {
+            steps {
+                //sh "docker-compose up --detach --build"
             }
         }
     }
