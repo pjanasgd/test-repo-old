@@ -6,7 +6,7 @@ pipeline {
             steps{
                 echo 'mvn install'
                 withMaven(maven: 'maven3'){
-                    sh './mvn clean install'
+                    sh 'mvn clean install'
                 }
             }
         }
