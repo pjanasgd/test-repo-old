@@ -1,13 +1,14 @@
 pipeline {
-    agent any
-
+    agent {
+        docker {
+            image 'maven:3.8.7-eclipse-temurin-11'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
     stages {
-        stage('maven install'){
-            steps{
-                echo 'mvn install'
-//                 withMaven(maven: 'maven3'){
-//                     sh 'mvn clean install'
-//                 }
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
             }
         }
     }
