@@ -8,6 +8,6 @@ class MainTest {
     @Test
     void hello_shouldReturnHelloWorld() {
         String returnedValue = Main.hello();
-        Assertions.assertEquals("Hello World", returnedValue);
+        Assertions.assertEquals("Hello world", returnedValue);
     }
 }
