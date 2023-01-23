@@ -1,20 +1,13 @@
 pipeline {
-    agent {
-        any {
-            echo 'any'
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
+    agent any
+
     stages {
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
+        stage('maven install'){
+            steps{
+                echo 'mvn install'
+                withMaven(maven: 'maven3'){
+                    sh 'mvn clean install'
+                }
             }
         }
     }
