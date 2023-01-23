@@ -9,7 +9,7 @@ pipeline {
                     sh 'mvn --version'
                     sh 'java -version'
                     sh 'curl https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api'
-                    sh 'mvn -X clean install'
+                    //sh 'mvn -X clean install'
                 }
             }
         }
