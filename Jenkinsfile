@@ -7,7 +7,7 @@ pipeline {
                 echo 'mvn install'
                 withMaven(maven: 'maven3'){
                     sh 'which mvn'
-                    sh 'mvn -B clean install'
+                    sh 'mvn clean install'
                 }
             }
         }
