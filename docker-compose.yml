@@ -1,6 +1,6 @@
 version: '3.0'
 services:
-  back-end:
+  backend:
     build:
       context: ./
     ports:
