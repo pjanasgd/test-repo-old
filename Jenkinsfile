@@ -6,9 +6,7 @@ pipeline {
             steps{
                 echo 'mvn install'
                 withMaven(maven: 'maven3'){
-                    sh 'mvn --version'
-                    sh 'java -version'
-                    sh 'curl https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api'
+                    sh 'which mvn'
                     //sh 'mvn -X clean install'
                 }
             }
