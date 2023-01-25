@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Docker-Compose-Up') {
             steps {
-                sh "docker-compose up --detach --build"
+                //sh "docker-compose up --detach --build"
             }
         }
     }
